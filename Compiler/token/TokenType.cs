@@ -7,10 +7,13 @@ namespace Compiler.token
 {
     public enum TokenType
     {
+        [RegularExpression("(/\\*.*?\\*/)")]
+        COMMENT,
+
         [RegularExpression("^ ")]
         WHITE_SPACE,
 
-        [RegularExpression("^\\,)")]
+        [RegularExpression("^\\,")]
         COMMA,
 
         [RegularExpression("^\\(")]
@@ -31,19 +34,19 @@ namespace Compiler.token
         [RegularExpression("^\\}")]
         RCUR,
 
-        [RegularExpression("^\\+)")]
+        [RegularExpression("^\\+")]
         PLUS,
 
-        [RegularExpression("^\\-)")]
+        [RegularExpression("^\\-")]
         MINUS,
 
-        [RegularExpression("^\\*)")]
+        [RegularExpression("^\\*")]
         MULTIPLY,
 
-        [RegularExpression("^\\/)")]
+        [RegularExpression("^\\/")]
         DIVIDE,
 
-        [RegularExpression("^\\%)")]
+        [RegularExpression("^\\%")]
         MODULO,
     }
 }
