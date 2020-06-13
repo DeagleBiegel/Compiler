@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Compiler.token;
+using System;
 
 namespace Compiler
 {
@@ -6,7 +7,12 @@ namespace Compiler
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Tokenizer tokenizer = new Tokenizer("/* test */ ( + ) *");
+
+            foreach (Token token in tokenizer.FilteredTokens())
+            {
+                Console.WriteLine("{0} : {1}", token.Type, token.Value);
+            }
         }
     }
 }
