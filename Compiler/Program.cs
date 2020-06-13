@@ -1,4 +1,5 @@
-﻿using Compiler.token;
+﻿using Compiler.parser;
+using Compiler.token;
 using System;
 
 namespace Compiler
@@ -8,6 +9,7 @@ namespace Compiler
         static void Main(string[] args)
         {
             Tokenizer tokenizer = new Tokenizer("/* test */ ( + ) *");
+            Parser parser = new Parser(tokenizer);
 
             foreach (Token token in tokenizer.FilteredTokens())
             {
